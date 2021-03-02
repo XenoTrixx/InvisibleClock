@@ -21,7 +21,8 @@ namespace InvisibleClock
         public static ClockWindow Clock;
         public static NotifyIcon NotifyIcon;
         public static Settings Settings;
-        public static string SettingsPath = Path.GetFullPath("assets/settings.json");
+        public static string saveDir = "assets";
+        public static string SettingsPath = Path.GetFullPath($"{saveDir}/settings.json");
 
 
         void App_Startup(object sender, StartupEventArgs e)
@@ -48,9 +49,18 @@ namespace InvisibleClock
         }
         public static void SaveSettings()
         {
+            CheckSaveDir(); 
+
             using (FileStream fs = File.Create(SettingsPath))
             {
                 JsonSerializer.SerializeAsync<Settings>(fs, Settings);
+            }
+        }
+
+        public static void CheckSaveDir()
+        {
+            if (!Directory.Exists(Path.GetFullPath(saveDir))) {
+                Directory.CreateDirectory(saveDir);
             }
         }
 
