@@ -1,0 +1,23 @@
+﻿{
+  "Window": {
+    "TransparentBackground": true,
+    "BackgroundColor": "#AAAAAA",
+    "IsForeGround": true,
+    "Width": 215,
+    "Height":  90
+  },
+  "Position": {
+    "Standard": true,
+    "Top": 500,
+    "Left": 1795
+  },
+  "Font": {
+    "Color": "#FFFFFF",
+    "Size": 50,
+    "Family": "serif"
+  },
+  "Time": {
+    "Interval": 1000,
+    "Format":  "HH:mm:ss"
+  }
+}
