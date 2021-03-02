@@ -56,10 +56,6 @@ namespace InvisibleClock
 
         private void Update_Clock (Object obj, ElapsedEventArgs elapsedEventArgs)
         {
-            //Dispatcher.Invoke((Action)delegate () {
-            //    this.timeLable.Content = DateTime.Now.ToString(App.Settings.Time.Format);
-            //});
-
             System.Windows.Application.Current.Dispatcher.Invoke(delegate {
                 this.timeLable.Content = DateTime.Now.ToString(App.Settings.Time.Format);
             });
